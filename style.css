@@ -27,10 +27,13 @@
 
   --light: #fff;
   --dark: #000;
+
+  --font-main: "Wittgenstein", serif;
+  --font-secondary: "Caveat", cursive;
 }
 
 body {
-  font-family: "Caveat", cursive;
+  font-family: var(--font-secondary);
   font-optical-sizing: auto;
   font-style: normal;
   line-height: 1.8;
@@ -43,9 +46,21 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Wittgenstein", serif;
+  font-family: var(--font-main);
   font-optical-sizing: auto;
   font-style: normal;
+}
+
+li {
+  list-style: none;
+}
+
+a:link,
+a:visited {
+  font-family: var(--font-main);
+  text-decoration: none;
+  color: var(--light);
+  font-size: 1.5rem;
 }
 
 aside#side-nav {
@@ -88,4 +103,37 @@ ul.side-nav__content--social a i {
 ul.side-nav__content--social a i:hover,
 ul.side-nav__content--social a i:active {
   color: var(--secondary-color);
+}
+
+main {
+  flex: 1;
+}
+
+main#header {
+  background-color: var(--secondary-color);
+  height: calc(3vw + 3vh);
+  z-index: 2;
+}
+
+nav#header__main-nav {
+  height: 100%;
+}
+
+ul.header__main--links {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+ul.header__main--links li {
+  padding-right: 3vw;
+}
+
+ul.header__main--links li a {
+  position: relative;
+  padding: 0.2rem 0.6rem;
+  font-size: calc(1rem + 0.6666vw);
 }
