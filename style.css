@@ -284,7 +284,7 @@ section#work {
 
 div.work__card {
   padding: 2rem;
-  flex-basis: 40rem;
+  flex-basis: 50rem;
   flex-grow: 1;
 
   clip-path: polygon(
@@ -389,6 +389,12 @@ section#about-me {
 .about-me__content--link:active::after {
   transform: scaleY(1);
   transform-origin: top;
+}
+
+@media screen and (min-width: 2200px) {
+  div.work__card {
+    flex-basis: 60rem;
+  }
 }
 
 @media screen and (max-width: 900px) {
