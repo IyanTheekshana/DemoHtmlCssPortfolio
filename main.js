@@ -6,6 +6,5 @@ const links = document.querySelectorAll(".header__main--links li");
 
 hamburger.addEventListener("click", () => {
   hamContainer.classList.toggle("clicked");
-  hamburger.classList.toggle("changedHamColor");
   links.forEach((link) => link.classList.toggle("fade"));
 });
