@@ -319,6 +319,7 @@ section#about-me {
   align-items: center;
   flex-wrap: wrap;
   background-color: var(--secondary-color);
+  padding: 6rem 2rem 2rem;
 }
 .about-me__img,
 .about-me__content {
@@ -449,9 +450,159 @@ section#services {
   font-size: 1.8rem;
 }
 
+section#skills {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 6rem 2rem 2rem;
+  background-color: var(--tertiary-color-m);
+}
+
+.skill__design,
+.skill__coding {
+  flex-grow: 1;
+  padding: calc(1rem + 2vw);
+  flex-basis: 40rem;
+}
+
+.skill__design--title,
+.skill__coding--title {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+.skill__design h4,
+.skill__coding h4 {
+  font-size: 1.8rem;
+  margin-bottom: 0.7rem;
+}
+
+.skill__design--progress,
+.skill__coding--progress {
+  position: relative;
+  display: block;
+  padding: 0.5rem;
+  background-color: var(--primary-color);
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.skill__design--progress span,
+.skill__coding--progress span {
+  position: relative;
+  display: inline-block;
+  vertical-align: center;
+  background-color: var(--secondary-color);
+  height: 1rem;
+}
+
+.skill__design--progress__1 {
+  animation: design-1 4s infinite cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.skill__design--progress__2 {
+  animation: design-2 4s infinite cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.skill__design--progress__3 {
+  animation: design-3 4s infinite cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.skill__design--progress__4 {
+  animation: design-4 4s infinite cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+@keyframes design-1 {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 90%;
+  }
+}
+
+@keyframes design-2 {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 70%;
+  }
+}
+
+@keyframes design-3 {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 80%;
+  }
+}
+
+@keyframes design-4 {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 80%;
+  }
+}
+
+.skill__coding--progress__1 {
+  animation: coding-1 4s infinite cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.skill__coding--progress__2 {
+  animation: coding-2 4s infinite cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.skill__coding--progress__3 {
+  animation: coding-3 4s infinite cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.skill__coding--progress__4 {
+  animation: coding-4 4s infinite cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+@keyframes coding-1 {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 99%;
+  }
+}
+
+@keyframes coding-2 {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 80%;
+  }
+}
+
+@keyframes coding-3 {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 90%;
+  }
+}
+
+@keyframes coding-4 {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 80%;
+  }
+}
+
 @media screen and (min-width: 2200px) {
   div.work__card {
     flex-basis: 60rem;
+  }
+  body {
+    width: 1500px;
+    margin: 0 auto;
+    background-color: #000000d7;
   }
 }
 
@@ -555,7 +706,9 @@ section#services {
     background-position: 80%;
   }
 
-  .services--title {
+  .services--title,
+  .skill__design--title,
+  .skill__coding--title {
     font-size: calc(2.5rem + 1vw);
   }
 
