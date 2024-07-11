@@ -19,6 +19,7 @@
   font-size: 62.5%;
 
   --primary-color: #014d4e;
+  --primary-color-m: #014d4ed8;
   --secondary-color: #ff9408;
   --secondary-color-m: #ff94088e;
 
@@ -391,6 +392,63 @@ section#about-me {
   transform-origin: top;
 }
 
+section#services {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 6rem 2rem 2rem;
+  background-color: var(--primary-color-m);
+}
+
+.service {
+  padding: 4rem;
+  margin: 2rem 2rem;
+  flex-basis: 50rem;
+  flex-grow: 1;
+  background-color: var(--primary-color);
+  position: relative;
+  z-index: 1;
+  color: var(--light);
+}
+
+.service::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: var(--secondary-color);
+  transform: scaleX(0);
+  transition: transform 0.45s cubic-bezier(0.075, 0.82, 0.165, 1);
+  z-index: -1;
+}
+
+.service:hover::after,
+.service:active::after {
+  transform: scaleX(1);
+}
+
+.services--title {
+  margin-bottom: 2rem;
+  font-size: 3rem;
+  color: var(--secondary-color);
+}
+
+.service:hover > .services--title,
+.service:active > .services--title {
+  color: var(--dark);
+}
+
+.service i {
+  font-size: 4rem;
+}
+
+.services--para {
+  font-size: 1.8rem;
+}
+
 @media screen and (min-width: 2200px) {
   div.work__card {
     flex-basis: 60rem;
@@ -495,5 +553,26 @@ section#about-me {
 
   section#showcase {
     background-position: 80%;
+  }
+
+  .services--title {
+    font-size: calc(2.5rem + 1vw);
+  }
+
+  .service i {
+    font-size: calc(2.5rem + 1vw);
+  }
+
+  .services--para {
+    font-size: calc(1.5rem + 0.5vw);
+  }
+
+  section#services {
+    padding: 6rem 3rem 2rem;
+  }
+
+  .service {
+    padding: calc(1rem + 2vw);
+    margin: 0 0 calc(1rem + 2vw);
   }
 }
