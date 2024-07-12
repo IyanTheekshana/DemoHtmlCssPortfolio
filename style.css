@@ -595,6 +595,75 @@ section#skills {
   }
 }
 
+section#testimonials {
+  display: flex;
+  padding: calc(1rem + 2vw);
+  background-color: var(--primary-color-m);
+
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+div.testimonials__card {
+  padding: 2vw;
+  position: relative;
+  flex-basis: 40rem;
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+.testimonials__card--img {
+  height: 100%;
+  width: 100%;
+}
+
+div.testimonials__card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.35s ease-in-out;
+}
+
+.testimonials__card--content__title {
+  font-size: 2.5rem;
+  color: var(--secondary-color);
+}
+
+.testimonials__card--content__para {
+  font-size: 1.5rem;
+  color: var(--light);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 10;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.testimonials__card--content {
+  position: absolute;
+  top: 35%;
+  left: 0;
+  width: 80%;
+  background-color: var(--primary-color);
+  padding: 1.5rem;
+
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s ease-in-out;
+}
+
+div.testimonials__card:hover .testimonials__card--content {
+  transform: scaleX(1);
+  transform-origin: center;
+  border-left: 1rem solid var(--secondary-color);
+}
+
+div.testimonials__card:hover .testimonials__card--img img {
+  transform: scale(1.1);
+  filter: blur(0.1rem);
+}
+
 @media screen and (min-width: 2200px) {
   div.work__card {
     flex-basis: 60rem;
@@ -708,7 +777,8 @@ section#skills {
 
   .services--title,
   .skill__design--title,
-  .skill__coding--title {
+  .skill__coding--title,
+  .testimonials__card--content__title {
     font-size: calc(2.5rem + 1vw);
   }
 
@@ -716,7 +786,8 @@ section#skills {
     font-size: calc(2.5rem + 1vw);
   }
 
-  .services--para {
+  .services--para,
+  .testimonials__card--content__para {
     font-size: calc(1.5rem + 0.5vw);
   }
 
@@ -727,5 +798,20 @@ section#skills {
   .service {
     padding: calc(1rem + 2vw);
     margin: 0 0 calc(1rem + 2vw);
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .testimonials__card--content__title {
+    font-size: calc(1.2rem + 1vw);
+  }
+  .testimonials__card--content__para {
+    font-size: calc(1rem + 0.5vw);
+  }
+  .testimonials__card--content {
+    position: absolute;
+    top: 37%;
+    left: 0;
+    width: 100%;
   }
 }
