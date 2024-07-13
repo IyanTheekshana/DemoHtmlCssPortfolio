@@ -40,6 +40,20 @@ body {
   display: flex;
 }
 
+body::-webkit-scrollbar {
+  width: 0.8rem;
+  background-color: var(--tertiary-color);
+}
+
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color);
+  outline: 1px solid slategrey;
+}
+
 h1,
 h2,
 h3,
@@ -74,6 +88,11 @@ div.side-nav__content {
   flex-direction: column;
   justify-content: space-between;
   background-color: var(--primary-color);
+  background: linear-gradient(
+    90deg,
+    var(--primary-color) 50%,
+    var(--primary-color-m) 100%
+  );
 }
 
 div.side-nav__content--logo img {
@@ -440,6 +459,7 @@ section#services {
 .service:hover > .services--title,
 .service:active > .services--title {
   color: var(--dark);
+  cursor: default;
 }
 
 .service i {
@@ -448,6 +468,7 @@ section#services {
 
 .services--para {
   font-size: 1.8rem;
+  cursor: default;
 }
 
 section#skills {
@@ -664,6 +685,56 @@ div.testimonials__card:hover .testimonials__card--img img {
   filter: blur(0.1rem);
 }
 
+section#contact {
+  height: 100vh;
+  background-image: url("img/full-bg-03.jpg");
+  background: linear-gradient(
+      to right,
+      rgba(16, 21, 30, 0.8),
+      rgba(16, 21, 30, 0.6),
+      rgba(16, 21, 30, 0.3),
+      rgba(16, 21, 30, 0.1)
+    ),
+    url("img/full-bg-03.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact__form {
+  flex-basis: 50rem;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--primary-color);
+  padding: 1rem;
+}
+
+.contact__form input,
+.contact__form textarea {
+  padding: 1rem 0.4rem;
+  margin-bottom: 1rem;
+  font-family: var(--font-secondary);
+  border: none;
+}
+
+.contact__form textarea {
+  height: 20vh;
+}
+
+.contact__form input[type="submit"] {
+  background-color: var(--secondary-color);
+  color: var(--light);
+  font-family: var(--font-main);
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+.contact__form input[type="submit"]:hover {
+  color: var(--light);
+  background-color: var(--secondary-color-m);
+}
 @media screen and (min-width: 2200px) {
   div.work__card {
     flex-basis: 60rem;
@@ -798,6 +869,11 @@ div.testimonials__card:hover .testimonials__card--img img {
   .service {
     padding: calc(1rem + 2vw);
     margin: 0 0 calc(1rem + 2vw);
+  }
+
+  section#contact {
+    align-items: flex-end;
+    background-position: left;
   }
 }
 
